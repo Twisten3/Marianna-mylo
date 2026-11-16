@@ -1,6 +1,6 @@
 # For you, Marianna
 
-A small original ASCII rose bouquet, inspired by a terminal-style coding video. The project includes an animated Python terminal version and a browser version. No video, external libraries, fonts, or image assets are needed.
+A small original ASCII bouquet of 33 pink roses, inspired by a terminal-style coding video. The full-screen browser scene is tuned for phone screens, with a bouquet that blooms from an empty starry sky, shooting stars, and fireworks. The project also includes a separate animated Python terminal version. No video, external libraries, fonts, or image assets are needed.
 
 ## Terminal version
 
@@ -19,3 +19,7 @@ python3 -m http.server 8000
 ```
 
 Then visit <http://127.0.0.1:8000>.
+
+## GitHub Pages
+
+The site deploys automatically from `main` through GitHub Actions. After the first successful deployment, visit <https://twisten3.github.io/Marianna-mylo/>.

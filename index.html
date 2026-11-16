@@ -2,11 +2,11 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#050506" />
     <meta
       name="description"
-      content="Анімований ASCII-букет троянд — for you, Marianna."
+      content="Анімований букет троянд розквітає під зоряним небом."
     />
     <title>For you, Marianna ♡</title>
     <link rel="stylesheet" href="styles.css" />
@@ -14,72 +14,10 @@
   </head>
   <body>
     <main>
-      <section class="bouquet-stage" aria-label="Анімований букет троянд">
+      <section class="bouquet-stage" aria-label="Анімований букет троянд під зоряним небом">
         <canvas id="bouquet" aria-hidden="true"></canvas>
-        <p class="clock" aria-label="Букет розквітає">
-          <span class="clock-dot"></span>
-          <span id="elapsed">00:00</span>
-        </p>
-        <div class="bouquet-caption" aria-live="polite">
-          <p>roses open <span id="rose-count">13</span>/19</p>
-          <p>petals falling <span id="petal-count">+0</span></p>
-          <p class="dedication">For you, Marianna <span>♡</span></p>
-        </div>
       </section>
-
-      <section class="editor-wrap" aria-label="Код анімації троянд">
-        <div class="editor">
-          <div class="editor-bar">
-            <div class="file-tab">
-              <span class="file-mark" aria-hidden="true">PY</span>
-              <span>rose_bouquet.py</span>
-            </div>
-            <div class="run-status">
-              <span class="run-dot"></span>
-              <span id="run-state">running</span>
-              <span class="separator">·</span>
-              <span>30 fps</span>
-            </div>
-          </div>
-          <div class="code-scroll">
-            <pre class="code" aria-label="Фрагмент Python"><code><span class="line"><span class="line-number">38</span><span>    radius = math.<span class="function">hypot</span>(dx, dy)</span></span>
-<span class="line"><span class="line-number">39</span><span>    angle = math.<span class="function">atan2</span>(dy, dx)</span></span>
-<span class="line"><span class="line-number">40</span><span>    edge = <span class="number">0.82</span> + <span class="number">0.12</span> * math.<span class="function">sin</span>(</span></span>
-<span class="line"><span class="line-number">41</span><span>        angle * <span class="number">7</span> + radius * <span class="number">11</span> - time_value * <span class="number">0.7</span></span></span>
-<span class="line"><span class="line-number">42</span><span>    )</span></span>
-<span class="line"><span class="line-number">43</span><span>    edge += <span class="number">0.06</span> * math.<span class="function">sin</span>(angle * <span class="number">13</span> - radius * <span class="number">18</span>)</span></span>
-<span class="line"><span class="line-number">44</span><span>    <span class="keyword">if</span> radius &gt;= edge:</span></span>
-<span class="line"><span class="line-number">45</span><span>        <span class="keyword">return</span> None</span></span>
-<span class="line"><span class="line-number">46</span><span>    glow = <span class="function">max</span>(<span class="number">0</span>, <span class="number">1</span> - radius / <span class="number">0.38</span>)</span></span>
-<span class="line"><span class="line-number">47</span><span>    highlight = abs(math.<span class="function">sin</span>(angle * <span class="number">2.2</span> + radius * <span class="number">13</span> - time_value * <span class="number">0.5</span>)) &gt; <span class="number">0.94</span></span></span>
-<span class="line"><span class="line-number">48</span><span>    <span class="keyword">return</span> <span class="string">"rose"</span>, glow, highlight</span></span>
-<span class="line"><span class="line-number">49</span><span></span></span>
-<span class="line"><span class="line-number">140</span><span><span class="keyword">def</span> <span class="function">render_frame</span>(width, height, time_value, petals, enabled):</span></span>
-<span class="line"><span class="line-number">141</span><span>    grid = [[<span class="string">" "</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(width)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(height)]</span></span>
-<span class="line"><span class="line-number">142</span><span></span></span>
-<span class="line"><span class="line-number">143</span><span>    <span class="keyword">for</span> _ <span class="keyword">in</span> range(max(<span class="number">16</span>, width * height // <span class="number">170</span>)):</span></span>
-<span class="line"><span class="line-number">144</span><span>        x = random.<span class="function">randrange</span>(width)</span></span>
-<span class="line"><span class="line-number">145</span><span>        y = random.<span class="function">randrange</span>(height)</span></span>
-<span class="line"><span class="line-number">146</span><span>        grid[y][x] = random.<span class="function">choice</span>([<span class="string">"·"</span>, <span class="string">"+"</span>, <span class="string">"˙"</span>])</span></span>
-<span class="line"><span class="line-number">147</span><span></span></span>
-<span class="line"><span class="line-number">148</span><span>    roses = {<span class="string">"rose"</span>}</span></span></code></pre>
-          </div>
-          <div class="editor-footer">
-            <span>UTF-8 <span class="footer-divider">·</span> Python 3</span>
-            <span>ASCII <span class="footer-divider">·</span> a little love</span>
-          </div>
-        </div>
-
-        <div class="dedication-action">
-          <p class="dedication-note" id="love-note" hidden>
-            A little bouquet, made just for you. <span aria-hidden="true">♡</span>
-          </p>
-          <button id="bloom-button" type="button" aria-expanded="false">
-            <span aria-hidden="true">✳</span> For you, Marianna
-          </button>
-        </div>
-      </section>
+      <p class="sr-only">For you, Marianna ♡</p>
     </main>
-    <p class="sr-only" id="announcement" aria-live="polite"></p>
   </body>
 </html>
